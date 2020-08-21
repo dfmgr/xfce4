@@ -133,6 +133,7 @@
         <property name="add-primary-clipboard" type="bool" value="true"/>
         <property name="enable-actions" type="bool" value="false"/>
         <property name="save-on-quit" type="bool" value="true"/>
+        <property name="history-ignore-primary-clipboard" type="bool" value="false"/>
       </property>
     </property>
     <property name="plugin-14" type="string" value="actions"/>
