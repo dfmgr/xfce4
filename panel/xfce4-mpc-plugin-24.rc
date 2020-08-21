@@ -1,0 +1,8 @@
+[Settings]
+mpd_host=$MPDSERVER
+mpd_port=6600
+mpd_password=
+show_frame=true
+client_appl=myterminal -e "ncmpcpp -h $MPDSERVER"
+tooltip_format=Volume : %vol%% - Mpd %status%%newline%%artist% - %title%
+playlist_format=%artist% - %title%
