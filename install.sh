@@ -173,7 +173,9 @@ run_postinst() {
   iconmgr install N.I..B.
   thememgr install Arc-Pink-Dark lightdm grub
   dotfilesreq xfce4-terminal
+  replace "$APPDIR/panel" "MPDSERVER_host" "$MPDSERVER"
   replace "$APPDIR" "/home/jason" "$HOME"
+
 
 }
 
