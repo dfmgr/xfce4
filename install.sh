@@ -179,11 +179,19 @@ fi
 
 # run post install scripts
 
+run_post_custom() {
+  if pidof xfce4-panel >/dev/null 2>&1; then
+    xfce4-panel -s 2>/dev/null
+    xfce4-panel -q >/dev/null 2>&1
+    sleep 10
+    for d in "$(ls -d $APPDIR/panel/launcher-*)"; do
+      rm_rf "$d"
+    done
+  fi
+}
+
 run_postinst() {
   dfmgr_run_post
-  xfce4-panel -s 2>/dev/null
-  pidof xfce4-panel &>/dev/null && xfce4-panel -q >/dev/null 2>&1
-  [ -d "$APPDIR/panel" ] && rm_rf "$APPDIR/panel/launcher-*"
   [ -n "$MPDSERVER" ] && GETMPDSERVER="$(getent ahosts "$MPDSERVER" 2>/dev/null | head -n1 | awk '{print $1}')" || GETMPDSERVER="localhost"
   mpdhostserver="${GETMPDSERVER}"
   replace "$APPDIR/panel" "MPDSERVER_host" "$mpdhostserver"
@@ -192,7 +200,7 @@ run_postinst() {
 }
 
 execute \
-  "run_postinst" \
+  "run_post_custom && run_postinst" \
   "Running post install scripts"
 
 printf_question_timeout "Should I install the themes and icons?"
