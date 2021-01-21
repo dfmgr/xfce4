@@ -188,6 +188,7 @@ run_post_custom() {
       rm_rf "$d"
     done
   fi
+  cp_rf "$DOWNLOADED_TO/local_share/." "$HOME/.local/share/xfce4/."
 }
 
 run_postinst() {
@@ -196,8 +197,11 @@ run_postinst() {
   mpdhostserver="${GETMPDSERVER}"
   replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
-  [[ "$DESKTOP_SESSION" =~ "xfce" ]] && xfce4-panel >/dev/null 2>&1 &
-  xfce4-panel -s 2>/dev/null
+  if [[ "$DESKTOP_SESSION" =~ "xfce" ]] || pidof xfce4-session &>/dev/null; then
+    xfce4-panel &>/dev/null &
+    sleep 5
+    pidof xfce4-panel >/dev/null 2>&1 && xfce4-panel -s 2>/dev/null
+  fi
 }
 
 execute \
