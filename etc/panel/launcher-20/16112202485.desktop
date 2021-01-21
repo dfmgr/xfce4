@@ -5,6 +5,6 @@ Name=Terminal
 Comment=My Terminal
 Exec=myterminal
 Icon=utilities-terminal
-Path=~
+Path=$HOME/
 Terminal=false
 StartupNotify=false

@@ -1,3 +1,4 @@
-FileManager=Thunar
-TerminalEmulator=myterminal
-MailReader=thunderbird
+FileManager=myfilemanager
+TerminalEmulator=custom-TerminalEmulator
+MailReader=myemail
+
