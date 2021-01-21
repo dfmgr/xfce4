@@ -1,3 +1,3 @@
-FileManager=myeditor
+FileManager=Thunar
 TerminalEmulator=myterminal
-MailReader=myemail
+MailReader=thunderbird

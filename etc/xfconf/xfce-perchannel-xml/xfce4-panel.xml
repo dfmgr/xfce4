@@ -5,15 +5,11 @@
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <value type="int" value="2"/>
+    <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="icon-size" type="uint" value="10"/>
       <property name="length" type="uint" value="100"/>
-      <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="26"/>
-      <property name="background-style" type="empty"/>
-      <property name="background-alpha" type="empty"/>
-      <property name="enter-opacity" type="empty"/>
-      <property name="leave-opacity" type="empty"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="2"/>
@@ -36,14 +32,12 @@
         <value type="int" value="13"/>
         <value type="int" value="14"/>
       </property>
-      <property name="autohide-behavior" type="uint" value="0"/>
-      <property name="icon-size" type="uint" value="16"/>
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="16"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="1"/>
-      <property name="position" type="string" value="p=10;x=0;y=0"/>
-      <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="48"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="15"/>
         <value type="int" value="16"/>
@@ -53,14 +47,95 @@
         <value type="int" value="20"/>
         <value type="int" value="21"/>
         <value type="int" value="23"/>
-        <value type="int" value="22"/>
       </property>
+      <property name="position" type="string" value="p=10;x=0;y=0"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="48"/>
     </property>
   </property>
   <property name="plugins" type="empty">
+    <property name="clipman" type="empty">
+      <property name="settings" type="empty">
+        <property name="add-primary-clipboard" type="bool" value="false"/>
+        <property name="enable-actions" type="bool" value="false"/>
+        <property name="history-ignore-primary-clipboard" type="bool" value="false"/>
+        <property name="save-on-quit" type="bool" value="true"/>
+      </property>
+      <property name="tweaks" type="empty">
+        <property name="never-confirm-history-clear" type="bool" value="true"/>
+        <property name="paste-on-activate" type="uint" value="0"/>
+      </property>
+    </property>
+    <property name="notes" type="empty">
+      <property name="global" type="empty">
+        <property name="background-color" type="string" value="GTK+"/>
+        <property name="font-description" type="string" value="Hack Nerd Font 12"/>
+      </property>
+    </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
+    <property name="plugin-10" type="string" value="notification-plugin"/>
+    <property name="plugin-11" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-12" type="string" value="clock"/>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-14" type="string" value="actions"/>
+    <property name="plugin-15" type="string" value="showdesktop"/>
+    <property name="plugin-16" type="string" value="separator"/>
+    <property name="plugin-17" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16112201151.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-18" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16112201552.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-19" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16112202054.desktop"/>
+      </property>
+    </property>
     <property name="plugin-2" type="string" value="tasklist">
       <property name="grouping" type="uint" value="1"/>
+    </property>
+    <property name="plugin-20" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16112202485.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-21" type="string" value="separator"/>
+    <property name="plugin-23" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16112202796.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-24" type="string" value="xfce4-mpc-plugin"/>
+    <property name="plugin-25" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-26" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-27" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-28" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-29" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-3" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-4" type="string" value="pager">
       <property name="items" type="array">
@@ -75,10 +150,20 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-6" type="string" value="systray">
-      <property name="show-handle" type="empty"/>
-      <property name="middle-click" type="empty"/>
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="square-icons" type="bool" value="true"/>
+      <property name="known-items" type="array">
+        <value type="string" value="Fcitx"/>
+        <value type="string" value="variety"/>
+      </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="variety"/>
+        <value type="string" value="blueberry-tray.py"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="notes"/>
+      </property>
+      <property name="names-hidden" type="array">
+      </property>
       <property name="names-ordered" type="array">
         <value type="string" value="task manager"/>
         <value type="string" value="thunar"/>
@@ -89,10 +174,12 @@
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="pamac-tray"/>
       </property>
-      <property name="names-hidden" type="array">
-      </property>
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="square-icons" type="bool" value="true"/>
     </property>
+    <property name="plugin-7" type="string" value="weather"/>
     <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="names-visible" type="array">
         <value type="string" value="network"/>
         <value type="string" value="networkmanager applet"/>
@@ -100,104 +187,8 @@
         <value type="string" value="bluetooth"/>
         <value type="string" value="mintupdate.py"/>
       </property>
-      <property name="show-frame" type="empty"/>
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
-    <property name="plugin-10" type="string" value="notification-plugin"/>
-    <property name="plugin-11" type="string" value="separator">
-      <property name="enable-keyboard-shortcuts" type="empty"/>
-      <property name="enable-mpris" type="empty"/>
-      <property name="mixer-command" type="empty"/>
-      <property name="show-notifications" type="empty"/>
-      <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-12" type="string" value="clock">
-      <property name="enable-keyboard-shortcuts" type="empty"/>
-      <property name="enable-mpris" type="empty"/>
-      <property name="mixer-command" type="empty"/>
-      <property name="show-notifications" type="empty"/>
-      <property name="digital-format" type="empty"/>
-    </property>
-    <property name="plugin-13" type="string" value="separator">
-      <property name="digital-format" type="empty"/>
-      <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="clipman" type="empty">
-      <property name="tweaks" type="empty">
-        <property name="never-confirm-history-clear" type="bool" value="true"/>
-        <property name="paste-on-activate" type="uint" value="2"/>
-      </property>
-      <property name="settings" type="empty">
-        <property name="add-primary-clipboard" type="bool" value="true"/>
-        <property name="enable-actions" type="bool" value="false"/>
-        <property name="save-on-quit" type="bool" value="true"/>
-        <property name="history-ignore-primary-clipboard" type="bool" value="false"/>
-      </property>
-    </property>
-    <property name="plugin-14" type="string" value="actions"/>
-    <property name="plugin-15" type="string" value="showdesktop"/>
-    <property name="plugin-16" type="string" value="separator"/>
-    <property name="plugin-17" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15801883441.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-18" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15801883733.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-19" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15801883864.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-20" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15801885235.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-21" type="string" value="separator"/>
-    <property name="plugin-22" type="string" value="directorymenu">
-      <property name="base-directory" type="string" value="/home/jason"/>
-    </property>
-    <property name="plugin-23" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15822381432.desktop"/>
-      </property>
-    </property>
-    <property name="notes" type="empty">
-      <property name="global" type="empty">
-        <property name="background-color" type="string" value="GTK+"/>
-        <property name="font-description" type="string" value="Hack Nerd Font 12"/>
-      </property>
-    </property>
-    <property name="plugin-7" type="string" value="weather"/>
-    <property name="plugin-24" type="string" value="xfce4-mpc-plugin"/>
-    <property name="plugin-27" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-      <property name="expand" type="bool" value="true"/>
-    </property>
-    <property name="plugin-28" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-29" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-      <property name="expand" type="bool" value="false"/>
-    </property>
-    <property name="plugin-26" type="string" value="separator">
-      <property name="expand" type="bool" value="false"/>
-      <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-3" type="string" value="separator">
-      <property name="expand" type="bool" value="true"/>
-      <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-25" type="string" value="separator">
-      <property name="expand" type="bool" value="true"/>
-      <property name="style" type="uint" value="0"/>
-    </property>
   </property>
 </channel>

@@ -72,7 +72,6 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;n" type="string" value="myterminal -e &quot;newsboat -x reload&quot;"/>
       <property name="&lt;Super&gt;v" type="string" value="myterminal -e videos"/>
       <property name="&lt;Super&gt;e" type="string" value="myeditor"/>
-      <property name="&lt;Primary&gt;w" type="string" value="randomwallpaper"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
