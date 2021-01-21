@@ -52,7 +52,7 @@ APPNAME="${APPNAME:-xfce4}"
 APPDIR="${APPDIR:-$HOME/.config/$APPNAME}"
 REPO="${DFMGRREPO:-https://github.com/dfmgr}/${APPNAME}"
 REPORAW="${REPORAW:-$REPO/raw}"
-APPVERSION="$(curl -LSs $REPORAW/master/version.txt)"
+APPVERSION="$(__appversion)"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -123,7 +123,7 @@ install_cpan $CPAN
 install_gem $GEMS
 
 # Other dependencies
-dotfilesreq git htop geany Thunar gtk-2.0 gtk-3.0 firefox 
+dotfilesreq git htop geany thunar gtk-2.0 gtk-3.0 firefox xfce4-terminal
 dotfilesreqadmin
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -137,15 +137,18 @@ ensure_perms
 
 # Main progam
 
-if [ -d "$APPDIR/.git" ]; then
+if [ -d "$APPDIR" ]; then
+  execute "backupapp $APPDIR $APPNAME" "Backing up $APPDIR"
+fi
+
+if [ -d "$DOWNLOADED_TO/.git" ]; then
   execute \
-  "git_update $APPDIR" \
-  "Updating $APPNAME configurations"
+    "git_update $DOWNLOADED_TO" \
+    "Updating $APPNAME configurations"
 else
   execute \
-  "backupapp && \
-        git_clone -q $REPO/$APPNAME $APPDIR" \
-  "Installing $APPNAME configurations"
+    "git_clone $REPO/$APPNAME $DOWNLOADED_TO" \
+    "Installing $APPNAME configurations"
 fi
 
 # exit on fail
@@ -155,20 +158,22 @@ failexitcode
 
 # Plugins
 
-if [ "$PLUGNAMES" != "" ]; then
-  if [ -d "$PLUGDIR"/PLUREP/.git ]; then
-    execute \
-    "git_update $PLUGDIR/PLUGREP" \
-    "Updating plugin PLUGNAME"
-  else
-    execute \
-    "git_clone PLUGINREPO $PLUGDIR/PLUGREP" \
-    "Installing plugin PLUGREP"
+if __am_i_online; then
+  if [ "$PLUGNAMES" != "" ]; then
+    if [ -d "$PLUGDIR"/PLUREP/.git ]; then
+      execute \
+        "git_update $PLUGDIR/PLUGREP" \
+        "Updating plugin PLUGNAME"
+    else
+      execute \
+        "git_clone PLUGINREPO $PLUGDIR/PLUGREP" \
+        "Installing plugin PLUGREP"
+    fi
   fi
-fi
 
-# exit on fail
-failexitcode
+  # exit on fail
+  failexitcode
+fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -176,20 +181,28 @@ failexitcode
 
 run_postinst() {
   dfmgr_run_post
-  mpdhostserver="${MPDSERVER:-localhost}"
-  killall xfce4-panel >/dev/null 2>&1
-  fontmgr install --all
-  iconmgr install N.I..B.
-  thememgr install Arc-Pink-Dark lightdm grub
-  dotfilesreq xfce4-terminal
+  xfce4-panel -s 2>/dev/null
+  pidof xfce4-panel &>/dev/null && xfce4-panel -q >/dev/null 2>&1
+  [ -d "$APPDIR/panel" ] || rm_rf "$APPDIR/panel"
+  [ -n "$MPDSERVER" ] && GETMPDSERVER="$(getent ahosts "$MPDSERVER" 2>/dev/null | head -n1 | awk '{print $1}')" || GETMPDSERVER="localhost"
+  mpdhostserver="${GETMPDSERVER}"
   replace "$APPDIR/panel" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
-  xfce4-panel >/dev/null 2>&1 &
+  [[ "$DESKTOP_SESSION" =~ "xfce" ]] && xfce4-panel >/dev/null 2>&1 &
 }
 
 execute \
-"run_postinst" \
-"Running post install scripts"
+  "run_postinst" \
+  "Running post install scripts"
+
+printf_question_timeout "Should I install the themes and icons?"
+echo ""
+if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
+  fontmgr install --all
+  iconmgr install N.I.B.
+  thememgr install Arc-Pink-Dark
+  systemmgr install lightdm grub
+fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
