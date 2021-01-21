@@ -197,6 +197,7 @@ run_postinst() {
   replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
   [[ "$DESKTOP_SESSION" =~ "xfce" ]] && xfce4-panel >/dev/null 2>&1 &
+  xfce4-panel -s 2>/dev/null
 }
 
 execute \
