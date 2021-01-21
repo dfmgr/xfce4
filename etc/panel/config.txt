@@ -1,0 +1,83 @@
+/configver 2
+/panels [<1>, <2>]
+/panels/dark-mode true
+/panels/panel-1/autohide-behavior uint32 0
+/panels/panel-1/icon-size uint32 10
+/panels/panel-1/length uint32 100
+/panels/panel-1/plugin-ids [<1>, <2>, <27>, <25>, <24>, <28>, <7>, <3>, <29>, <26>, <4>, <5>, <6>, <8>, <9>, <10>, <11>, <12>, <13>, <14>]
+/panels/panel-1/position 'p=6;x=0;y=0'
+/panels/panel-1/position-locked true
+/panels/panel-1/size uint32 16
+/panels/panel-2/autohide-behavior uint32 1
+/panels/panel-2/plugin-ids [<15>, <16>, <17>, <18>, <19>, <20>, <21>, <23>]
+/panels/panel-2/position 'p=10;x=0;y=0'
+/panels/panel-2/position-locked true
+/panels/panel-2/size uint32 48
+/plugins/clipman/settings/add-primary-clipboard false
+/plugins/clipman/settings/enable-actions false
+/plugins/clipman/settings/history-ignore-primary-clipboard false
+/plugins/clipman/settings/save-on-quit true
+/plugins/clipman/tweaks/never-confirm-history-clear true
+/plugins/clipman/tweaks/paste-on-activate uint32 0
+/plugins/notes/global/background-color 'GTK+'
+/plugins/notes/global/font-description 'Hack Nerd Font 12'
+/plugins/plugin-1 'whiskermenu'
+/plugins/plugin-10 'notification-plugin'
+/plugins/plugin-11 'separator'
+/plugins/plugin-11/style uint32 0
+/plugins/plugin-12 'clock'
+/plugins/plugin-13 'separator'
+/plugins/plugin-13/style uint32 0
+/plugins/plugin-14 'actions'
+/plugins/plugin-15 'showdesktop'
+/plugins/plugin-16 'separator'
+/plugins/plugin-17 'launcher'
+/plugins/plugin-17/items [<'16112201151.desktop'>]
+/plugins/plugin-18 'launcher'
+/plugins/plugin-18/items [<'16112201552.desktop'>]
+/plugins/plugin-19 'launcher'
+/plugins/plugin-19/items [<'16112202054.desktop'>]
+/plugins/plugin-2 'tasklist'
+/plugins/plugin-2/grouping uint32 1
+/plugins/plugin-20 'launcher'
+/plugins/plugin-20/items [<'16112202485.desktop'>]
+/plugins/plugin-21 'separator'
+/plugins/plugin-23 'launcher'
+/plugins/plugin-23/items [<'16112202796.desktop'>]
+/plugins/plugin-24 'xfce4-mpc-plugin'
+/plugins/plugin-25 'separator'
+/plugins/plugin-25/expand true
+/plugins/plugin-25/style uint32 0
+/plugins/plugin-26 'separator'
+/plugins/plugin-26/expand false
+/plugins/plugin-26/style uint32 0
+/plugins/plugin-27 'separator'
+/plugins/plugin-27/expand true
+/plugins/plugin-27/style uint32 0
+/plugins/plugin-28 'separator'
+/plugins/plugin-28/style uint32 0
+/plugins/plugin-29 'separator'
+/plugins/plugin-29/expand false
+/plugins/plugin-29/style uint32 0
+/plugins/plugin-3 'separator'
+/plugins/plugin-3/expand true
+/plugins/plugin-3/style uint32 0
+/plugins/plugin-4 'pager'
+/plugins/plugin-4/items [<'15795545152.desktop'>]
+/plugins/plugin-4/rows uint32 2
+/plugins/plugin-5 'separator'
+/plugins/plugin-5/items [<'15795545163.desktop'>]
+/plugins/plugin-5/style uint32 0
+/plugins/plugin-6 'systray'
+/plugins/plugin-6/known-items [<'Fcitx'>, <'variety'>]
+/plugins/plugin-6/known-legacy-items [<'variety'>, <'blueberry-tray.py'>, <'pamac-tray'>, <'networkmanager applet'>, <'clipman'>, <'notes'>]
+/plugins/plugin-6/names-hidden @av []
+/plugins/plugin-6/names-ordered [<'task manager'>, <'thunar'>, <'screenkey'>, <'notes'>, <'blueberry-tray.py'>, <'clipman'>, <'networkmanager applet'>, <'pamac-tray'>]
+/plugins/plugin-6/show-frame false
+/plugins/plugin-6/square-icons true
+/plugins/plugin-7 'weather'
+/plugins/plugin-8 'pulseaudio'
+/plugins/plugin-8/enable-keyboard-shortcuts true
+/plugins/plugin-8/names-visible [<'network'>, <'networkmanager applet'>, <'blueberry-tray.py'>, <'bluetooth'>, <'mintupdate.py'>]
+/plugins/plugin-8/show-notifications true
+/plugins/plugin-9 'power-manager-plugin'
