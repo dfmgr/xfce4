@@ -180,6 +180,7 @@ fi
 # run post install scripts
 
 run_post_custom() {
+  xfce4-panel -s >/dev/null 2>&1
   for d in "$APPDIR"/panel/launcher-*; do
     rm_rf "$d"
   done
@@ -187,13 +188,13 @@ run_post_custom() {
 }
 
 run_postinst() {
+  run_post_custom
   dfmgr_run_post
   [ -n "$MPDSERVER" ] && GETMPDSERVER="$(getent ahosts "$MPDSERVER" 2>/dev/null | head -n1 | awk '{print $1}')" || GETMPDSERVER="localhost"
   mpdhostserver="${GETMPDSERVER}"
   replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
   if [[ "$DESKTOP_SESSION" =~ "xfce" ]] || pidof xfce4-session &>/dev/null; then
-    xfce4-panel -s >/dev/null 2>&1
     xfce4-panel -r >/dev/null 2>&1
   fi
 }
