@@ -184,7 +184,7 @@ run_post_custom() {
     xfce4-panel -s 2>/dev/null
     xfce4-panel -q >/dev/null 2>&1
     sleep 10
-    for d in "$(ls -d $APPDIR/panel/launcher-*)"; do
+    for d in "$APPDIR"/panel/launcher-*; do
       rm_rf "$d"
     done
   fi
@@ -194,7 +194,7 @@ run_postinst() {
   dfmgr_run_post
   [ -n "$MPDSERVER" ] && GETMPDSERVER="$(getent ahosts "$MPDSERVER" 2>/dev/null | head -n1 | awk '{print $1}')" || GETMPDSERVER="localhost"
   mpdhostserver="${GETMPDSERVER}"
-  replace "$APPDIR/panel" "MPDSERVER_host" "$mpdhostserver"
+  replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
   [[ "$DESKTOP_SESSION" =~ "xfce" ]] && xfce4-panel >/dev/null 2>&1 &
 }
