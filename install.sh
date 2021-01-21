@@ -180,14 +180,9 @@ fi
 # run post install scripts
 
 run_post_custom() {
-  if pidof xfce4-panel >/dev/null 2>&1; then
-    xfce4-panel -s 2>/dev/null
-    xfce4-panel -q >/dev/null 2>&1
-    sleep 10
-    for d in "$APPDIR"/panel/launcher-*; do
-      rm_rf "$d"
-    done
-  fi
+  for d in "$APPDIR"/panel/launcher-*; do
+    rm_rf "$d"
+  done
   cp_rf "$DOWNLOADED_TO/local_share/." "$HOME/.local/share/xfce4/."
 }
 
@@ -198,9 +193,8 @@ run_postinst() {
   replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
   if [[ "$DESKTOP_SESSION" =~ "xfce" ]] || pidof xfce4-session &>/dev/null; then
-    xfce4-panel &>/dev/null &
-    sleep 5
-    pidof xfce4-panel >/dev/null 2>&1 && xfce4-panel -s 2>/dev/null
+    xfce4-panel -s >/dev/null 2>&1
+    xfce4-panel -r >/dev/null 2>&1
   fi
 }
 
