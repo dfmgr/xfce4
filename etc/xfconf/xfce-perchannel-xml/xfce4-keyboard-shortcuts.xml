@@ -179,7 +179,11 @@
         value="myterminal -e videos"
       />
       <property name="&lt;Super&gt;e" type="string" value="myeditor" />
-      <property name="&lt;Primary&gt;w" type="string" value="randomwallpaper" />
+      <property
+        name="&lt;Primary&gt;&lt;Shift&gt;r"
+        type="string"
+        value="randomwallpaper"
+      />
     </property>
   </property>
   <property name="xfwm4" type="empty">
