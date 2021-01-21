@@ -180,7 +180,11 @@ fi
 # run post install scripts
 
 run_post_custom() {
-  xfce4-panel -s >/dev/null 2>&1
+  #  if pidof xfce4-panel >/dev/null 2>&1; then
+  #    xfce4-panel -s 2>/dev/null
+  #    xfce4-panel -q >/dev/null 2>&1
+  #    sleep 10
+  #  fi
   for d in "$APPDIR"/panel/launcher-*; do
     rm_rf "$d"
   done
@@ -195,12 +199,13 @@ run_postinst() {
   replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
   if [[ "$DESKTOP_SESSION" =~ "xfce" ]] || pidof xfce4-session &>/dev/null; then
-    xfce4-panel -r >/dev/null 2>&1
+    xfce4-panel -sr >/dev/null 2>&1 &
+    sleep 5
   fi
 }
 
 execute \
-  "run_post_custom && run_postinst" \
+  "run_postinst" \
   "Running post install scripts"
 
 printf_question_timeout "Should I install the themes and icons?"
