@@ -50,6 +50,7 @@ scripts_check
 # Defaults
 APPNAME="${APPNAME:-xfce4}"
 APPDIR="${APPDIR:-$HOME/.config/$APPNAME}"
+INSTDIR="${INSTDIR}"
 REPO="${DFMGRREPO:-https://github.com/dfmgr}/${APPNAME}"
 REPORAW="${REPORAW:-$REPO/raw}"
 APPVERSION="$(__appversion)"
@@ -141,13 +142,13 @@ if [ -d "$APPDIR" ]; then
   execute "backupapp $APPDIR $APPNAME" "Backing up $APPDIR"
 fi
 
-if [ -d "$DOWNLOADED_TO/.git" ]; then
+if [ -d "$INSTDIR/.git" ]; then
   execute \
-    "git_update $DOWNLOADED_TO" \
+    "git_update $INSTDIR" \
     "Updating $APPNAME configurations"
 else
   execute \
-    "git_clone $REPO/$APPNAME $DOWNLOADED_TO" \
+    "git_clone $REPO/$APPNAME $INSTDIR" \
     "Installing $APPNAME configurations"
 fi
 
@@ -181,14 +182,14 @@ fi
 
 run_post_custom() {
   if pidof xfce4-panel >/dev/null 2>&1; then
-    xfce4-panel -s 2>/dev/null
+    xfce4-panel -q 2>/dev/null
     #    xfce4-panel -q >/dev/null 2>&1
     #    sleep 10
   fi
   for d in "$APPDIR"/panel/launcher-*; do
     rm_rf "$d"
   done
-  cp_rf "$DOWNLOADED_TO/local_share/." "$HOME/.local/share/xfce4/."
+  cp_rf "$INSTDIR/local_share/." "$HOME/.local/share/xfce4/."
 }
 
 run_postinst() {
