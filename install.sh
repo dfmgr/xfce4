@@ -209,7 +209,7 @@ execute \
   "run_postinst" \
   "Running post install scripts"
 
-printf_question_timeout "[ $ICON_QUESTION ] Should I install the themes and icons?"
+printf_question_timeout "$ICON_QUESTION Should I install the themes and icons?"
 echo ""
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
   fontmgr install --all
