@@ -6,5 +6,5 @@ Comment=My Terminal
 Exec=myterminal
 Icon=utilities-terminal
 Path=~
-Terminal=true
+Terminal=false
 StartupNotify=false
