@@ -1,9 +1,8 @@
 [Settings]
-mpd_host=10.0.94.19
+mpd_host=MPDSERVER_host
 mpd_port=6600
 mpd_password=
 show_frame=true
 client_appl=myterminal -e mpdclient
 tooltip_format=Volume:%vol%% - %status%%newline%%artist% - %title%
 playlist_format=%artist% - %title%
-

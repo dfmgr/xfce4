@@ -166,7 +166,7 @@ if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
   fontmgr install --all
   iconmgr install N.I.B.
   thememgr install Arc-Pink-Dark
-  systemmgr install lightdm grub
+  sudo systemmgr install lightdm grub
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # create version file
