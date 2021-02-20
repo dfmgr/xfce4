@@ -2,3 +2,6 @@
 desktop/icons.screen.latest.rc
 desktop/icons.screen0-1008x584.rc
 
+# Disable reminder in prompt
+ignoredirmessage
+

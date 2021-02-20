@@ -3,6 +3,6 @@ mpd_host=MPDSERVER_host
 mpd_port=6600
 mpd_password=
 show_frame=true
-client_appl=myterminal -e mpdclient
+client_appl=mpdclient --term
 tooltip_format=Volume:%vol%% - %status%%newline%%artist% - %title%
 playlist_format=%artist% - %title%
