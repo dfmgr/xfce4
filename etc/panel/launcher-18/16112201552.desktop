@@ -6,5 +6,5 @@ Comment=My Email
 Exec=myterminal -e 'myemail'
 Icon=thunderbird
 Path=
-Terminal=true
+Terminal=false
 StartupNotify=false

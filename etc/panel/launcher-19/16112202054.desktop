@@ -6,5 +6,5 @@ Comment=My Editor
 Exec=myterminal -e 'myeditor'
 Icon=accessories-text-editor
 Path=~
-Terminal=true
+Terminal=false
 StartupNotify=false

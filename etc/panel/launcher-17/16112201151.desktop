@@ -6,5 +6,5 @@ Comment=My Browser
 Exec=myterminal -e 'mybrowser'
 Icon=web-browser
 Path=
-Terminal=true
+Terminal=false
 StartupNotify=false

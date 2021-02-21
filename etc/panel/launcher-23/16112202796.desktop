@@ -6,5 +6,5 @@ Comment=My Files
 Exec=myterminal -e 'myfilemanager'
 Icon=system-file-manager
 Path=~
-Terminal=true
+Terminal=false
 StartupNotify=false
