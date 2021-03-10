@@ -61,24 +61,24 @@ export SUDO_ASKPASS DESKTOP_SESSION DESKTOP_SESSION_CONFDIR RESOLUTION
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Panel - not needed for awesome i3 qtile sway xmonad
-if __stopped xfce4-panel; then
-  if __cmd_exist polybar; then
-    __kill polybar
-    __start "$HOME/.config/polybar/launch.sh"
-  elif __cmd_exist tint2; then
-    __kill tint2
-    __start tint2 -c "$HOME/.config/tint2/tint2rc"
-  elif __cmd_exist lemonbar; then
-    __kill lemonbar
-    __start "$HOME/.config/lemonbar/lemonbar.sh"
-  else
-    PANEL="none"
-  fi
-  if [ "$PANEL" = "none" ] && __cmd_exist xfce4-session && __cmd_exist xfce4-panel; then
-    __kill xfce4-panel
-    __start xfce4-panel
-  fi
-fi
+#if __stopped xfce4-panel; then
+#  if __cmd_exist polybar; then
+#    __kill polybar
+#    __start "$HOME/.config/polybar/launch.sh"
+#  elif __cmd_exist tint2; then
+#    __kill tint2
+#    __start tint2 -c "$HOME/.config/tint2/tint2rc"
+#  elif __cmd_exist lemonbar; then
+#    __kill lemonbar
+#    __start "$HOME/.config/lemonbar/lemonbar.sh"
+#  else
+#    PANEL="none"
+#  fi
+#  if [ "$PANEL" = "none" ] && __cmd_exist xfce4-session && __cmd_exist xfce4-panel; then
+#    __kill xfce4-panel
+#    __start xfce4-panel
+#  fi
+#fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # setup keyboard
 if __cmd_exist ibus-daemon; then
@@ -184,19 +184,19 @@ if __cmd_exist conky; then
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Wallpaper manager
-if __cmd_exist randomwallpaper; then
-  __kill randomwallpaper
-  __start randomwallpaper --bg
-elif __cmd_exist variety; then
-  __kill variety
-  __start variety
-elif __cmd_exist feh; then
-  __kill feh
-  __start feh --bg-fill "${WALLPAPERS:-/home/jason/.local/share/wallpapers}/system/default.jpg"
-elif __cmd_exist nitrogen; then
-  __kill nitrogen
-  __start nitrogen --restore
-fi
+#if __cmd_exist randomwallpaper; then
+#  __kill randomwallpaper
+#  __start randomwallpaper --bg
+#elif __cmd_exist variety; then
+#  __kill variety
+#  __start variety
+#elif __cmd_exist feh; then
+#  __kill feh
+#  __start feh --bg-fill "${WALLPAPERS:-/home/jason/.local/share/wallpapers}/system/default.jpg"
+#elif __cmd_exist nitrogen; then
+#  __kill nitrogen
+#  __start nitrogen --restore
+#fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Network Manager
 if __cmd_exist nm-applet; then
@@ -232,16 +232,16 @@ if __cmd_exist volumeicon; then
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # clipman
-if __cmd_exist xfce4-clipman; then
-  __kill xfce4-clipman
-  __start xfce4-clipman
-fi
+#if __cmd_exist xfce4-clipman; then
+#  __kill xfce4-clipman
+#  __start xfce4-clipman
+#fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # PowerManagement
-if __cmd_exist xfce4-power-manager; then
-  __kill xfce4-power-manager
-  __start xfce4-power-manager
-fi
+#if __cmd_exist xfce4-power-manager; then
+#  __kill xfce4-power-manager
+#  __start xfce4-power-manager
+#fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Session used if you want xfce4
 # if __cmd_exist xfce4-session; then
