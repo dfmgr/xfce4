@@ -154,7 +154,11 @@ run_post_custom() {
 run_postinst() {
   run_post_custom
   dfmgr_run_post
-  [ -n "$MPDSERVER" ] && GETMPDSERVER="$(getent ahosts "$MPDSERVER" 2>/dev/null | head -n1 | awk '{print $1}')" || GETMPDSERVER="localhost"
+  if [ -n "$MPDSERVER" ]; then
+    GETMPDSERVER="$(getent ahosts "$MPDSERVER" 2>/dev/null | head -n1 | awk '{print $1}')"
+  else
+    GETMPDSERVER="localhost"
+  fi
   mpdhostserver="${GETMPDSERVER}"
   replace "$APPDIR" "MPDSERVER_host" "$mpdhostserver"
   replace "$APPDIR" "/home/jason" "$HOME"
@@ -163,12 +167,11 @@ run_postinst() {
 execute "run_postinst" "Running post install scripts"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 printf_question_timeout "$ICON_QUESTION Should I install the themes and icons?"
-echo ""
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
   fontmgr install --all
   iconmgr install N.I.B.
   thememgr install Arc-Pink-Dark
-  sudo systemmgr install lightdm grub
+  sudo systemmgr install grub
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # create version file
