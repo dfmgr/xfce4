@@ -168,10 +168,10 @@ execute "run_postinst" "Running post install scripts"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 printf_question_timeout "$ICON_QUESTION Should I install the themes and icons?"
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
-  fontmgr install --all
-  iconmgr install N.I.B.
-  thememgr install Arc-Pink-Dark
-  sudo systemmgr install grub
+  execute "fontmgr install --all" "Installing fonts"
+  execute "iconmgr install N.I.B." "Installing icons"
+  execute "thememgr install Arc-Pink-Dark" "Installing themes"
+  execute "sudo systemmgr install grub" "Installing system packages"
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # create version file
