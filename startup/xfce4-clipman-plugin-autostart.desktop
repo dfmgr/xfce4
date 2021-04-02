@@ -1,3 +1,5 @@
+#!/usr/bin/env xdg-open
+
 [Desktop Entry]
 Type=Application
 Name=Clipman
@@ -5,6 +7,5 @@ Comment=Clipboard manager
 TryExec=xfce4-clipman
 Exec=xfce4-clipman
 Icon=xfce4-clipman-plugin
-OnlyShowIn=XFCE;X-Cinnamon;
 Terminal=false
 Hidden=false
