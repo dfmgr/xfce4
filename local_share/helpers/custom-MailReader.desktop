@@ -5,7 +5,7 @@ Encoding=UTF-8
 Type=X-XFCE-Helper
 X-XFCE-Category=MailReader
 X-XFCE-CommandsWithParameter=myemail "%s"
-Icon=myemail
+Icon=thunderbird
+Type=Application
 Name=myemail
 X-XFCE-Commands=myemail
-

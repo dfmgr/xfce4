@@ -5,7 +5,7 @@ Encoding=UTF-8
 Type=X-XFCE-Helper
 X-XFCE-Category=FileManager
 X-XFCE-CommandsWithParameter=myfilemanager "%s"
-Icon=myfilemanager
+Icon=Thunar
+Type=Application
 Name=myfilemanager
 X-XFCE-Commands=myfilemanager
-

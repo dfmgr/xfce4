@@ -5,7 +5,7 @@ Encoding=UTF-8
 Type=X-XFCE-Helper
 X-XFCE-Category=TerminalEmulator
 X-XFCE-CommandsWithParameter=myterminal "%s"
-Icon=myterminal
+Icon=utilities-terminal
+Type=Application
 Name=myterminal
 X-XFCE-Commands=myterminal
-

@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <channel name="xfce4-notifyd" version="1.0">
-  <property name="notify-location" type="uint" value="2"/>
-  <property name="theme" type="empty"/>
-  <property name="initial-opacity" type="empty"/>
-  <property name="expire-timeout" type="empty"/>
-  <property name="primary-monitor" type="uint" value="0"/>
-  <property name="do-fadeout" type="empty"/>
-  <property name="log-level" type="uint" value="0"/>
-  <property name="log-level-apps" type="uint" value="0"/>
+  <property name="notify-location" type="uint" value="2" />
+  <property name="theme" type="empty" />
+  <property name="initial-opacity" type="empty" />
+  <property name="expire-timeout" type="empty" />
+  <property name="primary-monitor" type="uint" value="0" />
+  <property name="do-fadeout" type="empty" />
+  <property name="log-level" type="uint" value="0" />
+  <property name="log-level-apps" type="uint" value="0" />
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
-      <value type="string" value="notifications"/>
+      <value type="string" value="notifications" />
     </property>
   </property>
 </channel>
