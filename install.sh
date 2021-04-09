@@ -167,13 +167,13 @@ run_postinst() {
 #
 execute "run_postinst" "Running post install scripts"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-printf_question_timeout "$ICON_QUESTION Should I install the themes and icons?"
+printf_question_timeout "$ICON_QUESTION Should I install the themes and icons?" "1" "answer" "-s"
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
   execute "fontmgr install --all" "Installing fonts"
   execute "iconmgr install N.I.B." "Installing icons"
   execute "thememgr install Arc-Pink-Dark" "Installing themes"
 fi
-printf_question_timeout "$ICON_QUESTION Should I install grub customizations?"
+printf_question_timeout "$ICON_QUESTION Should I install grub customizations?" "1" "answer" "-s"
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
   sudo true
   execute "sudo systemmgr install grub" "Installing system packages"
