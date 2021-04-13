@@ -78,7 +78,7 @@ show_optvars "$@"
 dfmgr_run_init
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # end with a space
-APP="$APPNAME geany firefox thunar xfce4-terminal sxhkd xfce4-notifyd notify-send "
+APP="$APPNAME geany firefox thunar xfce4-terminal sxhkd xfce4-notifyd notify-send lxappearance qt5ct "
 PERL=""
 PYTH=""
 PIPS=""
