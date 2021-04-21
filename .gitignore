@@ -1,6 +1,6 @@
 # Disable reminder in prompt
 ignoredirmessage
-
+.installed
 */terminal/*
 desktop/icons.screen.latest.rc
 desktop/icons.screen0-1008x584.rc
